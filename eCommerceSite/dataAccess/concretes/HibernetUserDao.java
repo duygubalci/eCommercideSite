@@ -11,15 +11,20 @@ public class HibernetUserDao implements UserDao{
 		System.out.println("Hibernate ile Veritabanına eklendi.." + user.getFirstName());
 		
 	}
-
 	@Override
-	public boolean getMail(User user) {
-		return false;
+	public void delete(User user) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	public boolean getPassword(User user) {
+	public User get(int id) {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
+	}
+	@Override
+	public List<User> getAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

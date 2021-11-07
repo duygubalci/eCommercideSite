@@ -1,5 +1,6 @@
 package eCommerceSite;
 
+import eCommerceSite.business.abstracts.UserService;
 import eCommerceSite.business.concretes.UserCheckManager;
 import eCommerceSite.business.concretes.UserManager;
 import eCommerceSite.business.concretes.VerifyMailManager;
@@ -13,7 +14,7 @@ public class Main {
 	public static void main(String[] args) {
 	
 		//UserService userService= new UserManager(new HibernetUserDao(), new JGoogleManagerAdapter());
-		UserManager manager = new UserManager(new UserCheckManager(new JGoogleManagerAdapter()), new VerifyMailManager(), new HibernetUserDao());
+		UserService manager = new UserManager(new UserCheckManager(new JGoogleManagerAdapter()), new VerifyMailManager(), new HibernetUserDao());
 		
 		User user1 = new User(1, "Duygu", "Balcı", "duygu.balci@gmail.com", "1234567");
 		User user2 = new User(1, "Engin", "Demiroğ", "engin@gmail.com", "12345");

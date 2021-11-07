@@ -14,7 +14,7 @@ public class UserManager implements UserService {
 	private UserCheckService userCheckService;
 	private VerifyMailService veryfyMailService;
 	private UserDao userDao;
-	List<User> userList = new ArrayList<User>();
+	private List<User> userList = new ArrayList<User>();
 
 	public UserManager(UserCheckService userCheckService, VerifyMailService veryfyMailService, UserDao userDao) {
 		super();
@@ -31,7 +31,6 @@ public class UserManager implements UserService {
 					&& userCheckService.checkLastName(user) && userCheckService.checkMail(user)
 					&& veryfyMailService.checkMailVerify(user)) {
 
-				// userList = userDao.add(user);
 				System.out.println("Üyeliğiniz gerçekleştirildi.");
 				userList.add(user);
 				userDao.add(user);
